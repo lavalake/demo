@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:debuggable="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
@@ -23,9 +24,18 @@
             android:name=".RemoteService"
             android:enabled="true"
             android:exported="true">
-            #android:process=":aidlserver.service">
             <intent-filter>
                 <action android:name="com.example.jian1w.aidlserver.START_SERVICE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".RemoteServiceNoCallback"
+            android:enabled="true"
+            android:process=":aidlserverservice"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.jian1w.aidlserver.SERVICE_NOCALLBACK" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>

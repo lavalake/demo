@@ -10,5 +10,5 @@ interface IRemoteService {
      */
     void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
             double aDouble, String aString);
-            String getName();
+            String getName(IBinder callback);
 }

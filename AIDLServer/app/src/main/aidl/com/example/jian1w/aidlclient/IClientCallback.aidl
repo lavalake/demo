@@ -1,15 +1,14 @@
-// RemoteService.aidl
-package com.example.jian1w.aidlserver;
+// IClientCallback.aidl
+package com.example.jian1w.aidlclient;
 
 // Declare any non-default types here with import statements
 
-interface IRemoteService {
+interface IClientCallback {
     /**
      * Demonstrates some basic types that you can use as parameters
      * and return values in AIDL.
      */
     void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
             double aDouble, String aString);
-
-    String getName(IBinder callback);
+    void onResult();
 }
